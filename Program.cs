@@ -20,14 +20,14 @@ if (localPesca != "C" && localPesca != "M")
     return;
 }
 
-if (localPesca == "C" && pesoPescado <= MaxAguasContinentais ||
-    localPesca == "M" && pesoPescado <= MaxAguasMarinhas)
+if (localPesca == "C" && pesoPescado <= LimiteAguasContinentais ||
+    localPesca == "M" && pesoPescado <= LimiteAguasMarinhas)
 {
     Console.WriteLine("Pescaria dentro dos limites legais.");
     return;
 }
 
-double pesoPermitido = localPesca == "C" ? MaxAguasContinentais : MaxAguasMarinhas;
+double pesoPermitido = localPesca == "C" ? LimiteAguasContinentais : LimiteAguasMarinhas;
 double pesoExcesso = pesoPescado - pesoPermitido;
 decimal multa = MultaBase + MultaExcesso * Convert.ToDecimal(pesoExcesso);
 
